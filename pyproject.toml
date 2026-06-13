@@ -1,0 +1,72 @@
+[project]
+name = "wieferich-prime-search"
+version = "0.1.0"
+description = "Search for Wieferich primes"
+authors = [
+    { name = "matmaer", email = "22435003+matmaer@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "gmpy2>=2.3.0",
+    "gmpy2-stubs>=2.2.1.5",
+    "textual>=8.2.7",
+]
+
+[dependency-groups]
+dev = [
+    "black>=26.5.1",
+    "ipython>=9.14.1",
+    "isort>=8.0.1",
+    "pre-commit>=4.6.0",
+    "pytest>=9.0.3",
+    "textual-dev>=1.8.0",
+]
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/matmaer/wieferich-prime-search"
+
+[tool.pre-commit]
+config = ".pre-commit-config.yaml"
+
+[tool.black]
+skip-magic-trailing-comma = true
+target-version = ["py314"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+
+[tool.ruff.lint]
+select = [
+    "ARG",     # Unused arguments
+    "B",       # flake8-bugbear
+    "C4",      # flake8-comprehensions
+    "E",       # pycodestyle errors
+    "ERA001",  # eradicate (commented-out code)
+    "F",       # Pyflakes
+    "I",       # isort
+    "N",       # Naming
+    "PLE",     # pylint errors
+    "PT",      # Pytest style
+    "PTH",     # Use pathlib
+    "RUF012",  # flake8-class-attributes
+    "SIM",     # Simplify
+    "UP",      # pyupgrade
+    "W",       # pycodestyle
+]
+
+[tool.codespell]
+check-filenames = true
+
+[tool.pytest.ini_options]
+addopts = "--color=auto --tb=no -s --no-header -p no:cacheprovider --timeout=15"
+testpaths = ["static_tests"]
+pythonpath = ["src"]
+python_files = ["[!_]*.py"]
+asyncio_mode = "auto"
+truncation_limit_chars = 0
+truncation_limit_lines = 0
+env = ["CI=1"]

@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"python.analysis.typeCheckingMode": "strict",
+		"python.defaultInterpreterPath": "/home/mm/repos/wieferich-prime-search/.venv/bin/python"
+	}
+}

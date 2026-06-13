@@ -1,2 +1,2 @@
 # wieferich-prime-search
-Search for Wieferich Primes
+Search for Wieferich primes!
